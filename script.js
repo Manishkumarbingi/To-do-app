@@ -18,15 +18,15 @@ let completed=document.getElementById("completed");
 let header=document.getElementById("header");
 
 //syncing the session storage
-if (sessionStorage.getItem('uncompleted_tasks')) {
-    uncompleted_tasks = JSON.parse(sessionStorage.getItem('uncompleted_tasks'));
+if (localStorage.getItem('uncompleted_tasks')) {
+    uncompleted_tasks = JSON.parse(localStorage.getItem('uncompleted_tasks'));
 }else{
-    sessionStorage.setItem('uncompleted_tasks',JSON.stringify(uncompleted_tasks));
+    localStorage.setItem('uncompleted_tasks',JSON.stringify(uncompleted_tasks));
 }
-if (sessionStorage.getItem('completed_tasks')) {
-    completed_tasks = JSON.parse(sessionStorage.getItem('completed_tasks'));
+if (localStorage.getItem('completed_tasks')) {
+    completed_tasks = JSON.parse(localStorage.getItem('completed_tasks'));
 } else {
-    sessionStorage.setItem('completed_tasks', JSON.stringify(completed_tasks));
+    localStorage.setItem('completed_tasks', JSON.stringify(completed_tasks));
 }
 
 //uncompleted tasks loading
@@ -61,7 +61,7 @@ taskOk.addEventListener("click", () => {
     const newTaskValue = taskInput.value.trim();
     if(newTaskValue) {
         uncompleted_tasks.push(newTaskValue);
-        sessionStorage.setItem('uncompleted_tasks', JSON.stringify(uncompleted_tasks));
+        localStorage.setItem('uncompleted_tasks', JSON.stringify(uncompleted_tasks));
     }
     taskInput.value = ''; 
     taskModal.classList.remove('active');
@@ -73,11 +73,11 @@ taskOk.addEventListener("click", () => {
 function check(task){
     let index = uncompleted_tasks.indexOf(task);
     uncompleted_tasks.splice(index, 1);
-    sessionStorage.setItem("uncompleted_tasks",JSON.stringify(uncompleted_tasks));
+    localStorage.setItem("uncompleted_tasks",JSON.stringify(uncompleted_tasks));
     setTimeout(() => location.reload(), 200);
     
     completed_tasks.push(task);
-    sessionStorage.setItem("completed_tasks",JSON.stringify(completed_tasks));
+    localStorage.setItem("completed_tasks",JSON.stringify(completed_tasks));
 }
 
 
@@ -97,7 +97,7 @@ function modify(task){
                 let index = uncompleted_tasks.indexOf(task);
                 uncompleted_tasks.splice(index, 1);
                 uncompleted_tasks.push(update_value);
-                sessionStorage.setItem('uncompleted_tasks', JSON.stringify(uncompleted_tasks));
+                localStorage.setItem('uncompleted_tasks', JSON.stringify(uncompleted_tasks));
             }
             update_value.value = ''; 
             update_window.classList.remove('active');
@@ -109,7 +109,7 @@ function modify(task){
     del.addEventListener("click",()=>{
         let index = uncompleted_tasks.indexOf(task);
         uncompleted_tasks.splice(index, 1);
-        sessionStorage.setItem("uncompleted_tasks",JSON.stringify(uncompleted_tasks));
+        localStorage.setItem("uncompleted_tasks",JSON.stringify(uncompleted_tasks));
         setTimeout(() => location.reload(), 200);
     })
     
