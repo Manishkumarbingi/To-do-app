@@ -1,0 +1,239 @@
+body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(15, 14, 14, 0.837);
+}
+
+#app{
+    
+    border-radius: 3em;
+    height: 80%;
+    width:  450px;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    transition: filter 0.3s ease;
+}
+
+.header{
+    background-color: violet;
+    color: white;
+    height: 2em;
+    display: flex;
+    width:100% ;
+    justify-content: center;
+    align-items: center;
+    font-size: 200%; 
+}
+#content{
+    display: flex;
+    flex-direction: column;
+    max-height: 440px;
+    overflow-y: auto;
+    width: 100%;
+    
+}
+#content::-webkit-scrollbar {
+    display: none;
+}
+.card{
+    border: 2px solid black;
+    font-size: 150%;
+    border-radius: 10px;
+    width: 90%;
+    padding: 10px;
+    margin: 10px;
+    box-sizing: border-box;
+    margin-left: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 15px;
+    background-color: rgba(255, 255, 0, 0.589);
+    
+}
+.card > input{
+    height: 20px;
+    width: 20px;
+}
+.card label {
+    white-space: nowrap;        
+    overflow: hidden;          
+    text-overflow: clip;    
+    display: inline-block;     
+    max-width: 300px;           
+}
+
+#content button{
+    position: sticky;
+    bottom: 10px;
+    left: 300px;
+    height: auto;
+    font-size: 120%;
+    width: 150px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5em;
+    background-color: rgba(255, 0, 0, 0.951);
+    color: white;
+    
+}
+#fottor{
+    background-color: rgba(0, 0, 255, 0.614);
+    color: white;
+    height: 2.5em;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 150%; 
+}
+
+#taskModal {
+  position: fixed;
+  font-size: 150%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  z-index: 1000;
+  background-color: white;  
+  color: black;
+  width:20%;
+  height:25%;   
+  display: none;
+}
+#taskInput{
+    background-color: rgba(255, 255, 0, 0.589);
+    color: black;
+    width:15em;
+    height:5em;
+    margin-left: 1em;
+    font-size: large;
+}
+#taskOk{
+    background-color: rgba(255, 0, 0, 0.951);
+    color: white;
+    font-size: large;
+    margin-left: 8em;
+    margin-top: 1em;
+}
+#taskModal #close{
+    margin-left: 270px;
+    margin-bottom: 1em;
+}
+#taskModal.active {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+#options{
+position: fixed;
+  font-size: 150%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  z-index: 1000;
+  background-color: white;  
+  color: black;
+  width:20%;
+  height:20%;   
+  display: none;
+}
+
+
+.compress{
+    margin-left: 270px;
+    margin-bottom: 1em;
+}
+#update{
+    background-color:violet;
+    color: white;
+    font-size: large;
+    margin-top: 1.5em;
+    padding: 0.5em;
+    border-radius: 1em;
+    margin: 1em;
+}
+#delete{
+    background-color:rgba(0, 0, 255, 0.614);
+    color: white;
+    font-size: large;
+    margin-top: 1.5em;
+    padding: 0.5em;
+    border-radius: 1em;
+    
+}
+#options.active {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+#update_window{
+position: fixed;
+  font-size: 150%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  z-index: 1000;
+  background-color: white;  
+  color: black;
+  width:20%;
+  height:25%;   
+  display: none;
+}
+
+#update_window.active {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+#compress{
+    margin-left: 270px;
+    margin-bottom: 1em;
+}
+
+#update_ok{
+    background-color: rgba(255, 0, 0, 0.951);
+    color: white;
+    font-size: large;
+    margin-left: 8em;
+    margin-top: 1em;
+}
+#update_task{
+    background-color: rgba(255, 255, 0, 0.589);
+    color: black;
+    width:15em;
+    height:5em;
+    margin-left: 1em;
+    font-size: large;
+}
+.completed{
+    cursor: pointer;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do list</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/32601b5d5a.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div class="header" id="header">
+            To Do list
+        </div>
+        <div id="content">
+            
+          <button id="new_task"><i class="fa-solid fa-pen-to-square"></i> New task</button>  
+        </div>
+        
+        <div id="fottor">
+            <div id="count">
+                15/30
+            </div>
+            <div id="completed" class="completed">
+                Completed tasks
+            </div>
+        </div>
+    </div>
+    
+    <div id="taskModal" class="hidden">
+        <button id="close" onclick="location.reload()"><i class="fa-solid fa-xmark"></i></button>
+        <div class="modal-content">
+            <input type="text" id="taskInput" placeholder="Enter new task">
+            <button id="taskOk">OK</button>
+        </div>
+    </div>
+    <div id="options" class="hidden">
+        <button class="compress" onclick="location.reload()"><i class="fa-solid fa-xmark"></i></button>
+        <button id="update">Update Task</button>
+        <button id="delete"> Delete Task</button>
+    </div>
+    <div id="update_window" class="hidden">
+        <button id="compress" onclick="location.reload()"><i class="fa-solid fa-xmark"></i></button>
+        <input type="text" id="update_task" placeholder="">
+        <button id="update_ok">OK</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
